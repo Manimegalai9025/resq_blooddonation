@@ -260,6 +260,8 @@ def predict():
         months_since_last_donation = data["months_since_last_donation"]
         weight = data["weight"]
         city = data["city"]
+        latitude = data["latitude"]      # ADD THIS LINE
+        longitude = data["longitude"]
         
         city_df_temp = pd.DataFrame([[city]], columns=["city"])
         blood_df_temp = pd.DataFrame([[blood_group]], columns=["blood_group"])
@@ -280,6 +282,8 @@ def predict():
         feature_dict = {
             "age": [age],
             "gender": [gender],
+            "latitude": [latitude],
+            "longitude": [longitude],
             "medical_conditions": [medical_conditions],
             "months_since_last_donation": [months_since_last_donation],
             "weight": [weight],
